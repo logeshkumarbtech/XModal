@@ -39,8 +39,7 @@ function App() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if(formData.email.contains("@"))
+    e.preventDefault();    
     if(formData.mobile.length!==10){
       alert("Invalid phone number. Please enter a 10-digit phone number.");
     }
