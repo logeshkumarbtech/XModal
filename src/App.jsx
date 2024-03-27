@@ -40,6 +40,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(formData.email.contains("@"))
     if(formData.mobile.length!==10){
       alert("Invalid phone number. Please enter a 10-digit phone number.");
     }
@@ -67,6 +68,7 @@ function App() {
               <input
                 type="text"
                 name="uname"
+                id="username"
                 value={formData.uname}
                 onChange={handleChange}
                 required
@@ -80,6 +82,7 @@ function App() {
               <input
                 type="email"
                 name="email"
+                id="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -93,6 +96,7 @@ function App() {
               <input
                 type="text"
                 name="mobile"
+                id="phone"
                 value={formData.mobile}
                 onChange={handleChange}
                 maxLength="10"
@@ -108,12 +112,13 @@ function App() {
                 type="date"
                 placeholder="dd-mm-yyyy"
                 name="date"
+                id="dob"
                 value={formData.date}
                 onChange={handleChange}
                 required
               />
               <div>
-                <button type="submit">Submit</button>
+                <button type="submit"className="submit-button">Submit</button>
               </div>
             </form>
           </div>
